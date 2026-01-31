@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+pandas
+streamlit
+lxml
+python-dotenv
