@@ -1,22 +1,23 @@
 # Job Scraper Automation Tool
 
 ## Project Structure
-
 job-finder/
-├── db.py               # Initializes the SQL schema and handles database connections
-├── job_fetch.py        # Fetches raw job postings from Adzuna
-├── job_parse.py        # Cleans and normalizes data and inserts it into SQL
-├── pipeline.py         # Orchestrates the pipeline: fetch → parse → SQL
-├── streamlit_app.py    # Launches the Streamlit dashboard
-├── database/
-│   ├── schema.sql      # Database schema for reproducibility
-│   └── sample_jobs.db  # Small sample dataset for demonstration
-├── requirements.txt
-└── README.md
+- db.py               # Initializes the SQL schema and handles database connections
+- job_fetch.py        # Fetches raw job postings from Adzuna
+- job_parse.py        # Cleans and normalizes data and inserts it into SQL
+- pipeline.py         # Orchestrates the pipeline: fetch → parse → SQL
+- streamlit_app.py    # Launches the Streamlit dashboard
+- database/
+│   - sample_jobs.db  # Small sample dataset for demonstration
+- requirements.txt
+- README.md
 
 
 ## Overview
 A Python automation tool that scrapes job postings using the Adzuna Job API, cleans the data, and exports structured results into SQLite for analysis or visualization in a Streamlit dashboard. This project demonstrates web automation, data pipelines, and internal-style productivity tools.
+
+## Dashboard Preview
+![Job Scraper Dashboard](assets/screenshot.png)
 
 ## Why I Built This
 I wanted hands-on experience with web automation, data pipelines, and
