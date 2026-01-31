@@ -2,32 +2,57 @@
 
 ## Project Structure
 
-- `db.py` – Initializes the SQL schema and handles database connections
-- `job_fetch.py` – Scrapes raw job postings from the web
-- `job_parse.py` – Cleans and normalizes scraped data commiting it into the SQL
-- `pipeline.py` – Orchestrates the full ingestion process (fetch → parse → SQL)
-- `streamlit_app.py` – Launches a Streamlit dashboard that can process new data and download all available jobs into CSV format.
+job-finder/
+├── db.py               # Initializes the SQL schema and handles database connections
+├── job_fetch.py        # Fetches raw job postings from Adzuna
+├── job_parse.py        # Cleans and normalizes data and inserts it into SQL
+├── pipeline.py         # Orchestrates the pipeline: fetch → parse → SQL
+├── streamlit_app.py    # Launches the Streamlit dashboard
+├── database/
+│   ├── schema.sql      # Database schema for reproducibility
+│   └── sample_jobs.db  # Small sample dataset for demonstration
+├── requirements.txt
+└── README.md
+
 
 ## Overview
-A Python automation tool that scrapes job postings using Adzuna job API's,
-cleans the data, and exports structured results into an SQL for analysis and or a streamlit website.
+A Python automation tool that scrapes job postings using the Adzuna Job API, cleans the data, and exports structured results into SQLite for analysis or visualization in a Streamlit dashboard. This project demonstrates web automation, data pipelines, and internal-style productivity tools.
 
 ## Why I Built This
 I wanted hands-on experience with web automation, data pipelines, and
 building internal-style tools that reduce repetitive manual work.
 
 ## Features
-- Scrapes job postings using requests + BeautifulSoup
+- Fetches job postings via the Adzuna Job API
+
 - Normalizes and cleans raw text data
-- Exports results to SQL
+
+- Inserts structured data into SQLite
+
+- Streamlit dashboard for exploring and filtering jobs
+
 - Configurable search filters (location, role, keywords)
 
+- Download all results as CSV
+
 ## Tech Stack
-- Python
+- Python 3.x
 - requests / BeautifulSoup
 - pandas
+- Streamlit
+- SQLite
 
 
-## Example Output
-See `database/sample.db`
+## How to run
+- Clone Repository: git clone https://github.com/p-general/job-finder.git
+- Install Dependencies: pip install -r requirements.txt
+- Run the database initialization (optional if you want a fresh DB): python db.py
+- Run the full pipeline to fetch and insert jobs: python pipeline.py
+- Launch the Streamlit Dashboard: streamlit run streamlit_app.py
+
+A small sample database (database/sample_jobs.db) is included with public job postings from Adzuna.
+
+The database is included for demonstration purposes only.
+
+The pipeline can generate a fresh database dynamically.
  

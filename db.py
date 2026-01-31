@@ -21,18 +21,10 @@ CREATE TABLE IF NOT EXISTS jobs (
 );
 """
 
-CREATE_TABLE_SQL_SKILLS = """
-CREATE TABLE IF NOT EXISTS skills (
-    job_id TEXT PRIMARY KEY,
-    title TEXT NOT NULL,
-    skills TEXT
-);
-"""
 
 def init_db():
     con = get_connection()
     cursor = con.cursor()
-    cursor.execute(CREATE_TABLE_SQL_SKILLS)
     cursor.execute(CREATE_TABLE_SQL_JOBS)
     con.commit()
     con.close()
