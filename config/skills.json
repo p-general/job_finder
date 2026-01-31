@@ -1,9 +1,0 @@
-{
-  "python": ["python"],
-  "java": ["java"],
-  "sql": ["sql", "postgres", "mysql"],
-  "aws": ["aws", "ec2", "s3"],
-  "docker": ["docker"],
-  "pandas": ["pandas"],
-  "react": ["react", "react.js"]
-}

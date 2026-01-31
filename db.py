@@ -28,10 +28,11 @@ CREATE TABLE IF NOT EXISTS skills (
     skills TEXT
 );
 """
-con = get_connection()
-cursor = con.cursor()
-cursor.execute(CREATE_TABLE_SQL_SKILLS)
-cursor.execute(CREATE_TABLE_SQL_JOBS)
-print("Database Created")
-con.commit()
-con.close()
+
+def init_db():
+    con = get_connection()
+    cursor = con.cursor()
+    cursor.execute(CREATE_TABLE_SQL_SKILLS)
+    cursor.execute(CREATE_TABLE_SQL_JOBS)
+    con.commit()
+    con.close()

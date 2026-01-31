@@ -7,7 +7,7 @@ class Job_Finder:
 
     def job_fetcher(
         self,
-        country_code,
+        country_code="us",
         limit=100,
         sort_by="date",
         full_time=0,
@@ -73,11 +73,14 @@ class Job_Finder:
             print(response.text[:500])
             return []
 
-        # Extract jobs
+        return data
+    
+    @staticmethod
+    def streamlit_format(data):
         jobs = data.get("results", [])
 
-        # Format for dataframe
         formatted_jobs = []
+
         for job in jobs:
             formatted_jobs.append({
                 "Title": job.get("title"),
@@ -91,4 +94,3 @@ class Job_Finder:
             })
 
         return formatted_jobs
-    

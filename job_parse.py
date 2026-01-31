@@ -1,4 +1,4 @@
-from database.db import get_connection
+from db import get_connection
 
 INSERT_JOB_SQL = """
 INSERT OR IGNORE INTO jobs (
