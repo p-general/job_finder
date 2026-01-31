@@ -1,9 +1,17 @@
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # loads variables from .env
+
+APP_ID = os.getenv("ADZUNA_ID")
+APP_KEY = os.getenv("ADZUNA_KEY")
+
 
 class Job_Finder:
     def __init__(self):
-        self.app_id = "REDACTED_APP_ID"
-        self.app_key = "REDACTED_APP_KEY"
+        self.app_id = APP_ID
+        self.app_key = APP_KEY
 
     def job_fetcher(
         self,
