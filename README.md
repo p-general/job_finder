@@ -1,4 +1,4 @@
-# Job Scraper Automation Tool
+# Job Scraper Automation Tool Showcase
 
 ## Project Structure
 job-finder/
@@ -42,14 +42,6 @@ building internal-style tools that reduce repetitive manual work.
 - pandas
 - Streamlit
 - SQLite
-
-
-## How to run
-- Clone Repository: git clone https://github.com/p-general/job-finder.git
-- Install Dependencies: pip install -r requirements.txt
-- Run the database initialization (optional if you want a fresh DB): python db.py
-- Run the full pipeline to fetch and insert jobs: python pipeline.py
-- Launch the Streamlit Dashboard: streamlit run streamlit_app.py
 
 A small sample database (database/sample_jobs.db) is included with public job postings from Adzuna.
 
